@@ -24,12 +24,12 @@ window.smartsupp||(function(d) {
     </head>
     <body>                     
         <div class="uniremington-logo">
-            <img src="{{asset('img/uniremington_horizontal.png')}}" width="220">
+            <img src="{{asset('img/uniremington_horizontal.png')}}" width="180">
         </div>
 
         
         <div class="tic-logo">
-            <img src="{{asset('img/logo_tic_blanco.png')}}" width="100">
+            <img src="{{asset('img/logo_tic_blanco.png')}}" width="80">
         </div>
         
 
