@@ -1,77 +1,88 @@
-@extends('adminlte::master')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Iniciar Sesion</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/vendor/bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/vendor/animate/animate.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/vendor/css-hamburgers/hamburgers.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/vendor/animsition/css/animsition.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/vendor/select2/select2.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/vendor/daterangepicker/daterangepicker.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/css/main.css') }}">
 
-@section('adminlte_css')
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-    @yield('css')
-@stop
-
-@section('body_class', 'login-page')
-
-@section('body')
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">Epa</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
-            <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
+</head>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
                 {{ csrf_field() }}
-
-                <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">
-                    <input type="email" name="email" class="form-control" value="{{ old('email') }}"
-                           placeholder="{{ trans('adminlte::adminlte.email') }}">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					<span class="login100-form-title p-b-43">
+						Inicia sesión para continuar
+					</span>				                
+					<div class="wrap-input100 validate-input {{ $errors->has('email') ? 'has-error' : '' }}">
+						<input class="input100" type="email" name="email">
+						<span class="focus-input100"></span>
+                        <span class="label-input100">Email</span>
+                    </div>
+                    
                     @if ($errors->has('email'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
+                            <strong style="color:#ff4c4c">{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
-                </div>
-                <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
-                    <input type="password" name="password" class="form-control"
-                           placeholder="{{ trans('adminlte::adminlte.password') }}">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100"></span>
+                        <span class="label-input100">Contraseña</span>
+                    </div>
                     @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
-                </div>
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" name="remember" id="remember">
-                            <label for="remember">{{ trans('adminlte::adminlte.remember_me') }}</label>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">
-                            {{ trans('adminlte::adminlte.sign_in') }}
-                        </button>
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </form>
-            <br>
-            <p>
-                <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}" class="text-center">
-                    {{ trans('adminlte::adminlte.i_forgot_my_password') }}
-                </a>
-            </p>
-            @if (config('adminlte.register_url', 'register'))
-                <p>
-                    <a href="{{ url(config('adminlte.register_url', 'register')) }}" class="text-center">
-                        {{ trans('adminlte::adminlte.register_a_new_membership') }}
-                    </a>
-                </p>
-            @endif
-        </div>
-        <!-- /.login-box-body -->
-    </div><!-- /.login-box -->
-@stop
 
-@section('adminlte_js')
-    @yield('js')
-@stop
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						
+						<div>
+							<a href="#" class="txt1">
+								¿Olvidaste la contraseña?
+							</a>
+						</div>
+					</div>
+			
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Ingresar
+						</button>
+					</div>										
+		    </form>
+
+				<div class="login100-more" style="background-image: url('login-kit/images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="{{ asset ('login-kit/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset ('login-kit/vendor/animsition/js/animsition.min.js') }}"></script>
+	<script src="{{ asset ('login-kit/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ asset ('login-kit/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset ('login-kit/vendor/select2/select2.min.js') }}"></script>
+	<script src="{{ asset ('login-kit/vendor/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ asset ('login-kit/vendor/daterangepicker/daterangepicker.js') }}"></script>
+	<script src="{{ asset ('login-kit/vendor/countdowntime/countdowntime.js') }}"></script>
+    <script src="{{ asset ('login-kit/js/main.js') }}"></script>
+    <script src="{{ asset ('js/sweetalert.js') }}"></script>
+
+</body>
+</html>
