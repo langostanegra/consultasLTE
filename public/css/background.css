@@ -9,36 +9,6 @@ body{
     font-family: 'Exo', sans-serif;
 }
 
-
-.mensaje-central {
-    width: 100%;
-    position: absolute;
-    top:200px;
-}
-
-.mensaje-central h1{
-    text-align: center;
-    color: #fff;
-    font-size: 30px;
-}
-.mensaje-central h3{
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
-}
-
-.uniremington-logo {    
-    position: absolute;
-    margin-top:10px;
-    margin-left:10px;    
-}
-
-.tic-logo {    
-    position: absolute;
-    margin-top: 70px;
-    margin-left: 10px;
-}
-
 .area{
     background: #00457e;  
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
