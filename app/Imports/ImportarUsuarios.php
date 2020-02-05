@@ -4,8 +4,9 @@ namespace App\Imports;
 
 use App\BibliotecaCredencial;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ImportarUsuarios implements ToModel
+class ImportarUsuarios implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
@@ -15,12 +16,12 @@ class ImportarUsuarios implements ToModel
     public function model(array $row)
     {
         return new BibliotecaCredencial([
-            'cedula' => $row[0],
-            'nombre' => $row[1],
-            'correo_institucional' => $row[2],
-            'usuario_medellin' => $row[3],
-            'password_medellin' => $row[4],
-            'estado' => $row[5],
+            'cedula' => $row['cedula'],
+            'nombre' => $row['nombre'],
+            'correo_institucional' => $row['correo_institucional'],
+            'usuario_medellin' => $row['usuario_medellin'],
+            'password_medellin' => $row['password_medellin'],
+            'estado' => $row['estado'],
         ]);
     }
 }
