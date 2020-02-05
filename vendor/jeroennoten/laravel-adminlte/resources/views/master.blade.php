@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@yield('title_prefix', config('adminlte.title_prefix', ''))
-@yield('title', config('adminlte.title', 'AdminLTE 2'))
-@yield('title_postfix', config('adminlte.title_postfix', ''))</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!--<title>@yield('title_prefix', config('adminlte.title_prefix', ''))
+    @yield('title', config('adminlte.title', 'AdminLTE 2'))
+    @yield('title_postfix', config('adminlte.title_postfix', ''))</title>-->
+    <title>Uniremington Manizales</title>
+    <!-- Tell the browser to be responsive to screen width -->    
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">    
     <!-- Bootstrap 3.3.7 -->
+    <!--Favicon-->    
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/all.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/Ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/Ionicons/css/ionicons.min.css') }}">    
 
     @include('adminlte::plugins', ['type' => 'css'])
 

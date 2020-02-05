@@ -4,6 +4,9 @@
 	<title>Iniciar Sesion</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--Favicon-->    
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 	
 	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/vendor/bootstrap/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset ('login-kit/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">

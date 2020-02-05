@@ -1,5 +1,4 @@
 <?php
-
 return [
 
     /*
@@ -127,23 +126,17 @@ return [
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
     */
 
-    'menu' => [
+    'menu' => [   
         [
-            'text' => 'search',
-            'search' => true,
-        ],
-        ['header' => 'main_navigation'],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'    => 'Administración',
+            'icon'    => 'fas fa-users-cog',
+            'submenu' => [
+                [
+                    'text' => 'Importar usuarios',
+                    'url'  => 'importar-usuarios',
+                    'icon' => 'fas fa-upload',
+                ],
+            ],
         ],
         ['header' => 'account_settings'],
         [

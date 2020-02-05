@@ -21,3 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Ruta para la vista de las credenciales de la biblioteca virtual
 Route::resource('credenciales-biblioteca','LibraryCredential');
+
+//Ruta que muestra la vista para poder importar los usuarios
+Route::get('importar-usuarios', 'ImportarUsuariosController@index');
+//Ruta que envía el archivo de excel para poder ser importado
+Route::post('importar-usuarios','ImportarUsuariosController@importar_usuarios')->name('importar.usuarios.excel');

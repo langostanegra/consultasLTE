@@ -8,9 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Consultas - Uniremington Manizales</title>
-                
+
+        <!--Favicon-->    
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         <link rel="stylesheet" href="{{asset ('css/background.css')}}">
-        <link rel="stylesheet" href="{{asset ('css/welcome.css')}}">        
+        <link rel="stylesheet" href="{{asset ('css/welcome.css')}}">
+        
 
     </head>
     <body>                     

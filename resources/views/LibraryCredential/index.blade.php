@@ -1,1 +1,0 @@
-Vista de las credenciales de la biblioteca virtual
