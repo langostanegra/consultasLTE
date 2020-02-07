@@ -45,7 +45,15 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
+    {   
+        if ($exception instanceof \PhpOffice\PhpSpreadsheet\Exception) {
+            return redirect()->back()->with('errors', ['La Plantilla no puede estar vacía']);
+        }
+
+        if ($exception instanceof \ErrorException) {
+            return redirect()->back()->with('errors', ['La Plantilla tiene un formato no compatible']);
+        }
+        
         return parent::render($request, $exception);
     }
 }

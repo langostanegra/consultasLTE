@@ -14,16 +14,15 @@ class ImportarUsuariosController extends Controller
         return view('ImportarUsuarios.index');
     }
 
-    public function importar_usuarios(Request $request){ 
-                 
+    public function importar_usuarios(Request $request){          
         $validador = Validator::make($request->all(),[
-            'file' => 'required|max:5000|mimes:xlsx,xls,csv'
+            'file' => 'required|max:15000|mimes:xlsx,xls,csv'
         ]);
 
-        if($validador->passes()){
+        if($validador->passes()){            
             $file = $request->file('file');
             Excel::import(new ImportarUsuarios, $file);
-            return redirect()->back()->with(['succes'=>"Usuarios importados de forma correcta"]);
+            return redirect()->back()->with(['succes'=>"Usuarios importados de forma correcta"]);                                    
         }else{
             return redirect()->back()->with(['errors'=>$validador->errors()->all()]);
         }
